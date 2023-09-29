@@ -1,10 +1,7 @@
 package com.gsmsamples.mercadolivro.model
 
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
+import com.gsmsamples.mercadolivro.model.enums.CustomerStatus
+import jakarta.persistence.*
 
 @Entity(name = "customer")
 data class Customer(
@@ -14,5 +11,8 @@ data class Customer(
     @Column
     val email: String,
     @Column
-    val name: String
+    val name: String,
+    @Column
+    @Enumerated(EnumType.STRING)
+    val status: CustomerStatus
 )
